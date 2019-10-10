@@ -1,11 +1,7 @@
 kind: pipeline
-name: demo
-
+name: default
 steps:
-  - name: greeting
-    image: adoptopenjdk/openjdk8
+  - name: hello
+    image: alpine
     commands:
-      - mvn clean test
-    when:
-      event:
-        - push
+      - echo Hello World!
