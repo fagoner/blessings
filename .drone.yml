@@ -4,4 +4,4 @@ steps:
   - name: hello
     image: alpine
     commands:
-      - echo "nothing to say"
+      - echo "nothing to say anymore"
