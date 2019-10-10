@@ -1,10 +1,11 @@
----
 kind: pipeline
-type: docker
 name: demo
 
 steps:
-- name: greeting
-  image: adoptopenjdk/openjdk8
-  commands:
-  - mvn clean test
+  - name: greeting
+    image: adoptopenjdk/openjdk8
+    commands:
+      - mvn clean test
+    when:
+      event:
+        - push
