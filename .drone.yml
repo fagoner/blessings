@@ -9,3 +9,5 @@ steps:
     when:
       event:
         - push
+      branch:
+        - develop
