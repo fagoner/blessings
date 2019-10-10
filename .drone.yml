@@ -1,3 +1,10 @@
-image: adoptopenjdk/openjdk8
-script:
+---
+kind: pipeline
+type: docker
+name: demo
+
+steps:
+- name: greeting
+  image: adoptopenjdk/openjdk8
+  commands:
   - mvn clean test
