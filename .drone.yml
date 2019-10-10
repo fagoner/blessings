@@ -1,7 +1,9 @@
 kind: pipeline
 name: default
+type: docker
+
 steps:
-  - name: hello
-    image: alpine
+  - name: mvnCleanTest
+    image: adoptopenjdk/openjdk8
     commands:
-      - echo "nothing to say anymore"
+      - mvn clean test
