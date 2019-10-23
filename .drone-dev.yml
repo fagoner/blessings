@@ -8,9 +8,9 @@ steps:
       - "/flyway/flyway migrate"
 
   - name: test
-      image: maven:3.6.2-jdk-8
-      commands:
-        - mvn clean test
+    image: maven:3.6.2-jdk-8
+    commands:
+      - mvn clean test
 
 services:
   - name: mysql
