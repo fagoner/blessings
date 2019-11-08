@@ -30,12 +30,9 @@ class BlessingsApplicationTests {
 	@Test
 	fun gettingAll() {
 		transaction {
-			Bless.select {
-				Bless.id.eq(1)
-			}.first()
-					.run {
-				assert(this[Bless.message] == "Have a nice day")
-			}
+			Bless.select { Bless.id.eq(1) }
+					.first()
+					.run { assert(this[Bless.message] == "Have a nice day") }
 		}
 	}
 
