@@ -1,4 +1,4 @@
-FROM openjdk8:jdk8u222-b10
+FROM adoptopenjdk/openjdk8:jdk8u222-b10
 
 RUN mkdir /opt/app
 
