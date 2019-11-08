@@ -3,7 +3,7 @@ name: demo
 
 steps:
   - name: greeting
-    image: adoptopenjdk/openjdk8
+    image: maven/3.6.2-jdk-8
     commands:
       - mvn clean test
     when:
