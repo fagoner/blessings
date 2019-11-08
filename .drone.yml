@@ -3,9 +3,9 @@ name: demo
 
 steps:
   - name: migrations
-      image: flyway/flyway:6.0.6
-      commands:
-        - "/flyway/flyway migrate"
+    image: flyway/flyway:6.0.6
+    commands:
+      - "/flyway/flyway migrate"
 
   - name: mvn clean test
     image: maven:3.6.2-jdk-8
