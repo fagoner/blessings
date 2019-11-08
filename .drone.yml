@@ -6,6 +6,10 @@ steps:
     image: maven:3.6.2-jdk-8
     commands:
       - mvn clean test
-    when:
-      event:
-        - push
+
+services
+  - name: mysql
+    image: mysql:5.7.26
+    detach: true
+    environment:
+      MYSQL_ROOT_PASSWORD: r00t
