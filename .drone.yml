@@ -7,10 +7,19 @@ steps:
     commands:
       - "/flyway/flyway migrate"
 
-  - name: mvn clean test
+  - name: mvn clean package
     image: maven:3.6.2-jdk-8
     commands:
-      - mvn clean test
+      - mvn clean package
+
+  - name: delivery
+    image: plugins/docker
+    settings:
+      repo: fagoner/blessings
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_pass
 
 services:
   - name: mysql
