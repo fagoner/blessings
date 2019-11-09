@@ -21,7 +21,7 @@ class BlessingsApplicationTests {
 		fun initialize() {
 			Database.connect(url = "jdbc:mysql://mysql:3306/BLESSINGS",
 					driver = "com.mysql.cj.jdbc.Driver",
-					user = "blessUser",
+					user = "blessUser",   
 					password = "bl355")
 		}
 	}
