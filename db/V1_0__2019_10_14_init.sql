@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `BLESSINGS`.Bless(
     message VARCHAR(60) NOT NULL
 );
 
-INSERT INTO  `BLESSINGS`.Bless(message) VALUES("Have a nice day"), ("Don't worry, be happy");
+INSERT INTO  `BLESSINGS`.Bless(message) VALUES("Have a nice day"), ("Don't worry, be happy"), ("Today is friday");;
 
 CREATE USER IF NOT EXISTS 'blessUser'@'%' IDENTIFIED BY 'bl355';
 GRANT ALL PRIVILEGES ON BLESSINGS.* TO 'blessUser'@'%';
