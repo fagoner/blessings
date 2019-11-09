@@ -1,6 +1,7 @@
 package com.demo.blessings
 
 import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -31,3 +32,26 @@ object Bless: Table() {
 }
 
 data class BlessResponse(val id: Int, val message: String)
+
+object BlessMap {
+	fun toBlessResponse(row: ResultRow) =
+			BlessResponse(id = row[Bless.id], message = row[Bless.message] )
+}
+
+
+@RestController
+@RequestMapping("/v1/blessings")
+class BlessController {
+
+	@GetMapping("")
+	fun getAll(): ResponseEntity<List<BlessResponse>> {
+		return transaction {
+			Bless.selectAll().map {
+				BlessMap.toBlessResponse(it)
+			}.run {
+				ResponseEntity.ok().body(this)
+			}
+		}
+	}
+
+}
