@@ -19,7 +19,7 @@ steps:
       username:
         from_secret: docker_username
       password:
-        from_secret: docker_pass
+        from_secret: docker_password
 
 services:
   - name: mysql
